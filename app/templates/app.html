@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Video Converter</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" href="{% static "css/style.css" %}">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<img class="img" src="{% static "img/videos.png" %}" height="90;" width="90;">
+				<p class="title">Video Converter</p>
+			</div>
+			<div class="clear"></div>
+
+			<div class="link">
+                <p>{{ message }}</p>
+				<p class="text">CONVERT YOUTUBE VIDEO LINKS TO MP3, MP4, AVI WITH OUR YOUTUBE CONVERTER AND DOWNLOADER</p>
+                <form method="post" class="select">
+                    {% csrf_token %}
+                    <div class="form" align="center"> <input type="text" name="url"  class="input" placeholder="Paste link here:"></div>
+
+                    <div class="form" align="center"> <input type="image" class="submit" src="/static/img/start.png" width="80;" height="80;" >
+                </form>
+                    <div class="form" align="center">
+
+
+                    </div>
+
+			</div>
+		</div>
+    <p>Your video url: <a href="{{ result }}">{{ result }}</a></p>
+	</body>
+	<footer>
+			<div  class="footer" align="center">YouTube Converter</div>
+	</footer>
+
+</html>
